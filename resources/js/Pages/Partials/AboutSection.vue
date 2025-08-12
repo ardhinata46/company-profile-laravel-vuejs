@@ -1,12 +1,21 @@
 <template>
-    <section id="about" class="bg-gradient-to-b from-white to-blue-50 py-24">
+    <section
+        id="about"
+        class="bg-gradient-to-b from-white to-blue-50 py-24 dark:from-gray-900 dark:to-gray-800"
+    >
         <div class="mx-auto max-w-7xl px-4">
-            <div class="mb-16 text-center transform transition duration-500 hover:scale-105"
-                 data-aos="fade-up">
-                <h2 class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 md:text-5xl">
+            <div
+                class="mb-16 transform text-center transition duration-500 hover:scale-105"
+                data-aos="fade-up"
+            >
+                <h2
+                    class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-4xl font-bold text-transparent dark:from-blue-400 dark:to-indigo-400 md:text-5xl"
+                >
                     Tentang Kami
                 </h2>
-                <p class="mx-auto mt-6 max-w-2xl text-gray-600 text-lg">
+                <p
+                    class="mx-auto mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-300"
+                >
                     MyCompany adalah perusahaan yang bergerak di bidang solusi
                     teknologi modern. Kami berkomitmen untuk memberikan layanan
                     terbaik kepada klien kami dengan pendekatan inovatif.
@@ -14,26 +23,35 @@
             </div>
 
             <div class="grid items-center gap-12 md:grid-cols-2">
-                <div class="relative group" data-aos="fade-right">
+                <div class="group relative" data-aos="fade-right">
                     <div
-                        class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+                        class="absolute -inset-4 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 opacity-25 blur transition duration-1000 group-hover:opacity-40 dark:from-blue-400 dark:to-indigo-400"
+                    ></div>
                     <img
                         src="/about-image.jpg"
                         alt="Tentang Kami"
-                        class="relative rounded-lg shadow-xl hover:shadow-2xl transition duration-500 transform hover:scale-105"
+                        class="relative transform rounded-lg shadow-xl transition duration-500 hover:scale-105 hover:shadow-2xl"
                     />
                 </div>
 
-                <div class="transform transition duration-500" data-aos="fade-left">
-                    <h3 class="mb-6 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                <div
+                    class="transform transition duration-500"
+                    data-aos="fade-left"
+                >
+                    <h3
+                        class="mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-3xl font-bold text-transparent dark:from-blue-400 dark:to-indigo-400"
+                    >
                         Kenapa Memilih Kami?
                     </h3>
-                    <ul class="space-y-6 text-gray-700">
-                        <li class="flex items-start transform transition duration-300 hover:translate-x-2 group">
+                    <ul class="space-y-6 text-gray-700 dark:text-gray-300">
+                        <li
+                            class="group flex transform items-start transition duration-300 hover:translate-x-2"
+                        >
                             <span
-                                class="flex-shrink-0 p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition duration-300">
+                                class="flex-shrink-0 rounded-lg bg-blue-100 p-2 transition duration-300 group-hover:bg-blue-200 dark:bg-blue-900 dark:group-hover:bg-blue-800"
+                            >
                                 <svg
-                                    class="h-6 w-6 text-blue-600"
+                                    class="h-6 w-6 text-blue-600 dark:text-blue-400"
                                     fill="none"
                                     stroke="currentColor"
                                     stroke-width="2"
@@ -46,13 +64,19 @@
                                     />
                                 </svg>
                             </span>
-                            <span class="ml-4 text-lg">Tim profesional dan berpengalaman di bidangnya dengan sertifikasi internasional.</span>
+                            <span class="ml-4 text-lg"
+                                >Tim profesional dan berpengalaman di bidangnya
+                                dengan sertifikasi internasional.</span
+                            >
                         </li>
-                        <li class="flex items-start transform transition duration-300 hover:translate-x-2 group">
+                        <li
+                            class="group flex transform items-start transition duration-300 hover:translate-x-2"
+                        >
                             <span
-                                class="flex-shrink-0 p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition duration-300">
+                                class="flex-shrink-0 rounded-lg bg-blue-100 p-2 transition duration-300 group-hover:bg-blue-200 dark:bg-blue-900 dark:group-hover:bg-blue-800"
+                            >
                                 <svg
-                                    class="h-6 w-6 text-blue-600"
+                                    class="h-6 w-6 text-blue-600 dark:text-blue-400"
                                     fill="none"
                                     stroke="currentColor"
                                     stroke-width="2"
@@ -65,13 +89,19 @@
                                     />
                                 </svg>
                             </span>
-                            <span class="ml-4 text-lg">Komitmen terhadap kualitas dan kepuasan pelanggan dengan garansi layanan.</span>
+                            <span class="ml-4 text-lg"
+                                >Komitmen terhadap kualitas dan kepuasan
+                                pelanggan dengan garansi layanan.</span
+                            >
                         </li>
-                        <li class="flex items-start transform transition duration-300 hover:translate-x-2 group">
+                        <li
+                            class="group flex transform items-start transition duration-300 hover:translate-x-2"
+                        >
                             <span
-                                class="flex-shrink-0 p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition duration-300">
+                                class="flex-shrink-0 rounded-lg bg-blue-100 p-2 transition duration-300 group-hover:bg-blue-200 dark:bg-blue-900 dark:group-hover:bg-blue-800"
+                            >
                                 <svg
-                                    class="h-6 w-6 text-blue-600"
+                                    class="h-6 w-6 text-blue-600 dark:text-blue-400"
                                     fill="none"
                                     stroke="currentColor"
                                     stroke-width="2"
@@ -84,7 +114,10 @@
                                     />
                                 </svg>
                             </span>
-                            <span class="ml-4 text-lg">Inovasi dan solusi berbasis teknologi terkini dengan pendekatan yang terukur.</span>
+                            <span class="ml-4 text-lg"
+                                >Inovasi dan solusi berbasis teknologi terkini
+                                dengan pendekatan yang terukur.</span
+                            >
                         </li>
                     </ul>
                 </div>
