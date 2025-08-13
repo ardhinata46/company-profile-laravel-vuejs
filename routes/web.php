@@ -158,6 +158,98 @@ Route::get('/portfolio/{slug}', function (string $slug) {
 
 Route::get('/testimoni', fn () => Inertia::render('Testimonial'))->name('testimoni');
 Route::get('/blog', fn () => Inertia::render('Blog'))->name('blog');
+
+Route::get('/blog/{slug}', function (string $slug) {
+    $posts = [
+        [
+            'title' => 'Tips Memilih Jasa Web Development Terbaik',
+            'content' => '<p>Pelajari cara memilih partner IT yang tepat untuk mendukung pertumbuhan bisnis Anda di era digital.</p>',
+            'image' => 'https://via.placeholder.com/600x400',
+            'category' => 'Tips & Trik',
+            'author' => 'Admin',
+            'published_at' => '2025-08-10',
+            'tags' => ['web', 'development', 'tips'],
+        ],
+        [
+            'title' => 'Teknologi Terbaru 2025 yang Wajib Diketahui',
+            'content' => '<p>Berbagai tren teknologi yang akan mendominasi pasar di tahun 2025, mulai dari AI, Blockchain, hingga AR/VR.</p>',
+            'image' => 'https://via.placeholder.com/600x400',
+            'category' => 'Teknologi',
+            'author' => 'Tech Writer',
+            'published_at' => '2025-08-05',
+            'tags' => ['teknologi', '2025', 'tren'],
+        ],
+        [
+            'title' => 'Kenapa Website Penting untuk Bisnis?',
+            'content' => '<p>Website adalah wajah digital perusahaan Anda. Cari tahu kenapa website sangat penting di era modern ini.</p>',
+            'image' => 'https://via.placeholder.com/600x400',
+            'category' => 'Bisnis',
+            'author' => 'Marketing Team',
+            'published_at' => '2025-07-28',
+            'tags' => ['website', 'bisnis', 'digital marketing'],
+        ],
+        [
+            'title' => 'UI/UX Design: Rahasia Membuat Pengguna Betah',
+            'content' => '<p>Desain yang baik bukan hanya soal estetika, tapi juga kenyamanan pengguna dalam menggunakan aplikasi atau website.</p>',
+            'image' => 'https://via.placeholder.com/600x400',
+            'category' => 'Desain',
+            'author' => 'UI/UX Specialist',
+            'published_at' => '2025-07-20',
+            'tags' => ['ui', 'ux', 'design'],
+        ],
+        [
+            'title' => 'SEO 2025: Strategi Meningkatkan Ranking Website',
+            'content' => '<p>Optimasi mesin pencari terus berkembang. Pelajari strategi SEO terbaru untuk meningkatkan visibilitas bisnis Anda.</p>',
+            'image' => 'https://via.placeholder.com/600x400',
+            'category' => 'SEO',
+            'author' => 'SEO Expert',
+            'published_at' => '2025-07-15',
+            'tags' => ['seo', 'search engine', 'digital marketing'],
+        ],
+        [
+            'title' => 'Membangun Brand yang Kuat di Media Sosial',
+            'content' => '<p>Media sosial bukan sekadar platform promosi, tapi juga alat untuk membangun hubungan dengan audiens.</p>',
+            'image' => 'https://via.placeholder.com/600x400',
+            'category' => 'Branding',
+            'author' => 'Social Media Manager',
+            'published_at' => '2025-07-10',
+            'tags' => ['branding', 'social media', 'marketing'],
+        ],
+    ];
+
+    $found = null;
+    foreach ($posts as $post) {
+        if (Str::slug($post['title']) === $slug) {
+            $found = $post;
+            break;
+        }
+    }
+
+    if (!$found) {
+        return Inertia::render('BlogDetail', [
+            'blog' => null,
+            'slug' => $slug,
+        ]);
+    }
+
+    // Artikel terbaru
+    $recentPosts = collect($posts)->where('title', '!=', $found['title'])->values();
+
+    // Kategori contoh
+    $categories = [
+        ['name' => 'Teknologi', 'slug' => 'teknologi'],
+        ['name' => 'Bisnis', 'slug' => 'bisnis'],
+        ['name' => 'Berita', 'slug' => 'berita'],
+    ];
+
+    return Inertia::render('BlogDetail', [
+        'blog' => $found,
+        'slug' => $slug,
+        'recentPosts' => $recentPosts,
+        'categories' => $categories,
+    ]);
+})->name('blog.detail');
+
 Route::get('/about', fn () => Inertia::render('About'))->name('about');
 
 Route::get('/dashboard', function () {
